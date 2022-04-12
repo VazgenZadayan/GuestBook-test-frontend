@@ -1,16 +1,17 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { CircularProgress, Container, Typography } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
+import { CircularProgress, Container, Typography } from '@material-ui/core';
 
 import Comment from '../Comment';
 
 import {
-  commentsSelector,
   fetchAllComments,
   fetchCreateComment,
-} from '../../slices/commentsSlice';
+} from '../../services/commentService';
+
+import { commentsSelector } from '../../slices/commentsSlice';
 
 import CreateComment from '../CreateComment';
 
@@ -51,7 +52,7 @@ const Comments = React.memo((props) => {
         <Typography variant="h4" align="center">
           Comments
         </Typography>
-        {comments && comments.length > 0 ? (
+        {comments?.length > 0 ? (
           comments.map((comment) => {
             return <Comment key={comment._id} comment={comment} />;
           })
@@ -66,7 +67,9 @@ const Comments = React.memo((props) => {
           </Alert>
         ) : (
           <div>
-            <p style={{ textAlign: 'center' }}>Loading...</p>
+            <Typography component="p" align="center">
+              Loading...
+            </Typography>
             <CircularProgress
               hickness={5}
               size={32}

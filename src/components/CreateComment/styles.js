@@ -10,9 +10,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    height: '100%',
   },
-  textField: {
+  nameTextField: {
     marginBottom: theme.spacing(1),
+    height: '80px',
+  },
+  commentTextField: {
+    height: '100px',
   },
   submit: {
     marginTop: theme.spacing(1),

@@ -12,7 +12,7 @@ import {
 
 import useStyles from './styles';
 
-const Comment = ({ comment: { name, comment, date} }) => {
+const Comment = ({ comment: { name, comment, date } }) => {
   const classes = useStyles();
 
   return (

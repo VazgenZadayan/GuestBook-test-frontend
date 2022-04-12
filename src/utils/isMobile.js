@@ -4,6 +4,7 @@ const isWindows = () => !!navigator.userAgent.match(/IEMobile/i);
 const isIOS = () => !!navigator.userAgent.match(/iPhone|iPad|iPod/i);
 const isBlackBerry = () => !!navigator.userAgent.match(/BlackBerry/i);
 
-const isMobile = () => isAndroid() || isBlackBerry() || isIOS() || isOpera() || isWindows();
+const isMobile = () =>
+  isAndroid() || isBlackBerry() || isIOS() || isOpera() || isWindows();
 
 export default isMobile;

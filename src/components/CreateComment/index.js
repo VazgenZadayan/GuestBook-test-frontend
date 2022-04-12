@@ -53,7 +53,7 @@ const CreateComment = React.memo(({ handleSubmit, loading, userName }) => {
               variant="outlined"
               required
               fullWidth
-              className={classes.textField}
+              className={classes.nameTextField}
               id="title"
               label="Your name"
               helperText={touched.name && (errors.name || ' ')}
@@ -70,7 +70,7 @@ const CreateComment = React.memo(({ handleSubmit, loading, userName }) => {
               variant="outlined"
               required
               fullWidth
-              className={classes.textField}
+              className={classes.commentTextField}
               id="comment"
               label="Your comment"
               helperText={touched.comment && (errors.comment || ' ')}
