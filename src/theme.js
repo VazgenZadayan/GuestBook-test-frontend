@@ -1,5 +1,6 @@
 import { createTheme } from '@material-ui/core/styles';
 import isMobile from './utils/isMobile.js';
+
 const theme = createTheme({
   typography: {
     fontFamily: ['Roboto', 'sans-serif'].join(','),
@@ -25,7 +26,7 @@ const theme = createTheme({
           flexDirection: isMobile() ? 'column' : 'row',
           alignItems: 'center',
           minHeight: '100%',
-          height: '100vh',
+          height: isMobile() ? '100%' : '100vh',
         },
         ':focus': {
           outline: 'none',

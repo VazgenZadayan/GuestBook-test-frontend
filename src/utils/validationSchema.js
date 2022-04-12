@@ -22,6 +22,11 @@ const validationSchema = Yup.object({
       (value) => value && !HYPERLINKS_REG_EXP.test(value)
     )
     .test(
+      'whiteSpace',
+      'Please delete spaces',
+      (value) => value && value[0] !== ' '
+    )
+    .test(
       'isString',
       'Comment must be a string',
       (value) => value && typeof value
@@ -36,10 +41,6 @@ const validationSchema = Yup.object({
       'Comment must be less then 450 characters',
       (value) => value && String(value).length < 450
     )
-    .matches(
-      MAIN_REG_EXP,
-      'Name should only contain a-z, A-Z, 0-9, and underscore (_)'
-    ),
 });
 
 export default validationSchema;
